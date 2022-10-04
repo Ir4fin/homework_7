@@ -20,7 +20,13 @@ public class PracticeFormTestWithTestData extends TestBase {
             day,
             month,
             year,
-            address;
+            address,
+            subject,
+            hobbies,
+            file,
+            state,
+            city;
+
 
     @BeforeEach
     void prepareTestData() {
@@ -33,6 +39,11 @@ public class PracticeFormTestWithTestData extends TestBase {
         month = "June";
         year = faker.number().numberBetween(1920, 2022) + "";
         address = faker.address().fullAddress();
+        subject = "Hindi";
+        hobbies = "Music";
+        file = "src/test/resources/foto.jpg";
+        state = "Uttar Pradesh";
+        city = "Merrut";
     }
 
 
@@ -45,11 +56,11 @@ public class PracticeFormTestWithTestData extends TestBase {
                 .setGender(gender)
                 .setNumber(phone)
                 .setBirthDate(day, month, year)
-                .setSubjectsInput("Hindi")
-                .setHobbies("Music")
-                .uploadFile("src/test/resources/foto.jpg")
+                .setSubjectsInput(subject)
+                .setHobbies(hobbies)
+                .uploadFile(file)
                 .setAddress(address)
-                .setStateAndCity("Uttar Pradesh", "Merrut")
+                .setStateAndCity(state, city)
                 .clickOnSubmit();
 
 

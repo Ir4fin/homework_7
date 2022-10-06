@@ -35,7 +35,7 @@ public class PracticeFormTestWithTestData extends TestBase {
         userEmail = faker.internet().emailAddress();
         gender = faker.demographic().sex();
         phone = faker.phoneNumber().subscriberNumber(10);
-        day = faker.number().numberBetween(1, 30) + "";
+        day = String.format("%02d", faker.number().numberBetween(1,28));
         month = "June";
         year = faker.number().numberBetween(1920, 2022) + "";
         address = faker.address().fullAddress();
